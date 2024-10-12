@@ -1,0 +1,217 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Logo en la esquina superior izquierda */
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos del botón de Volver */
+.boton-volver {
+  position: fixed; /* Fija el botón en la pantalla */
+  bottom: 20px; /* Alinea el botón a 20px del borde inferior */
+  left: 20px; /* Alinea el botón a 20px del borde izquierdo */
+  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+  text-align: left; /* Alinea el botón a la izquierda */
+}
+
+.volver-btn {
+  display: inline-flex; /* Flex para centrar el icono y texto */
+  align-items: center; /* Centra verticalmente el contenido */
+  background-color: #007bff; /* Color de fondo azul */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 15px 25px; /* Espaciado interno aumentado */
+  border-radius: 30px; /* Bordes redondeados más marcados */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  font-size: 1.2em; /* Tamaño de fuente aumentado */
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Transiciones suaves */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra del botón más intensa */
+}
+
+.volver-btn:hover {
+  background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+  transform: translateY(-2px); /* Desplazamiento al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el mouse */
+}
+
+
+
+  .container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+  }
+  
+  .title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit:hover {
+    background-color: #0056b3;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .login-link a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .login-link a:hover {
+    color: #0056b3;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .container {
+      padding: 30px;
+    }
+  
+    .title {
+      font-size: 22px;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .btn-submit {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .logo-container {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .logo:hover {
+      transform: scale(1.05) rotate(8deg);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      padding: 6px;
+      font-size: 13px;
+    }
+  
+    .btn-submit {
+      padding: 6px;
+      font-size: 13px;
+    }
+  
+    .logo-container {
+      top: 10px;
+      left: 10px;
+      width: 70px;
+      height: 70px;
+    }
+  
+    .logo:hover {
+      transform: scale(1.03) rotate(6deg);
+    }
+  }
+  

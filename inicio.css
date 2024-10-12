@@ -1,0 +1,157 @@
+/* Estilo global */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #42a5f5, #478ed1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contenedor del formulario */
+form {
+    background-color: #ffffff;
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.8s ease-in-out;
+    position: relative;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Título del formulario */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    padding: 0 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de las etiquetas */
+label {
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Estilo de los campos de entrada */
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al enfocar los campos */
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #42a5f5;
+    box-shadow: 0 0 10px rgba(66, 165, 245, 0.2);
+    outline: none;
+}
+
+/* Botón de envío */
+input[type="submit"] {
+    background-color: #42a5f5;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(66, 165, 245, 0.4);
+}
+
+input[type="submit"]:hover {
+    background-color: #478ed1;
+    box-shadow: 0 12px 20px rgba(71, 142, 209, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Botón de cerrar sesión */
+button {
+    background-color: #ff5252;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(255, 82, 82, 0.4);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+button:hover {
+    background-color: #ff1744;
+    box-shadow: 0 12px 20px rgba(255, 23, 68, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Agregar transiciones */
+input[type="email"], input[type="password"], input[type="submit"], button {
+    transition: all 0.3s ease;
+}
+
+/* Estilo del texto de las etiquetas al pasar el ratón sobre los campos */
+input[type="email"]:hover, input[type="password"]:hover {
+    background-color: #ececec;
+}
+
+/* Estilo para un diseño más suave y moderno */
+form {
+    border-top: 5px solid #42a5f5;
+    border-bottom: 5px solid #478ed1;
+    padding-top: 60px; /* Espacio extra para el título */
+}
+
+/* Estilo para mejorar la experiencia en dispositivos móviles */
+@media (max-width: 600px) {
+    form {
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input[type="submit"], button {
+        padding: 10px 15px;
+    }
+}

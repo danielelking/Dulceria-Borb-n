@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/jpg" href="logo.jpeg"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dulce.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Dulceria Borbon</title>
+    <script>
+        function buscarProducto() {
+            const query = document.getElementById('buscar').value.toLowerCase();
+            const productos = document.querySelectorAll('.producto');
+            let found = false; // Variable para verificar si se encontraron productos
+
+            productos.forEach(producto => {
+                const nombreProducto = producto.querySelector('h3').textContent.toLowerCase();
+                // Mostrar o esconder el producto basado en la búsqueda
+                if (nombreProducto.includes(query)) {
+                    producto.style.display = 'block'; // Muestra el producto
+                    found = true; // Se encontró al menos un producto
+                } else {
+                    producto.style.display = 'none'; // Esconde el producto
+                }
+            });
+
+            // Muestra o esconde el botón de regresar según se encontraron productos
+            const btnRegresar = document.getElementById('btn-regresar');
+            btnRegresar.style.display = found && query !== '' ? 'block' : 'none'; // Muestra el botón si se encontró algún producto
+        }
+
+        function regresar() {
+            document.getElementById('buscar').value = ''; // Limpia el campo de búsqueda
+            const productos = document.querySelectorAll('.producto');
+
+            productos.forEach(producto => {
+                producto.style.display = 'block'; // Muestra todos los productos
+            });
+
+            const btnRegresar = document.getElementById('btn-regresar');
+            btnRegresar.style.display = 'none'; // Esconde el botón de regresar
+        }
+    </script>
+</head>
+  
+ <header>
+    <div class="logo">
+        <img src="logo.jpeg" alt="Logo de la compañía">
+    
+        <nav class="navegacion">
+            <ul class="menu">
+                <div class="search-container">
+                    
+                    <input type="text" id="buscar" placeholder="Buscar productos" oninput="buscarProducto()">
+                    
+                </div>
+            
+                <li><a href="#">Inicio</a></li>
+                <li><a href="nostros.html">Nosotros</a></li>
+               <li><a href ="#">Catalogo</a>
+               <ul class="submenu">
+                   <li><a href="#chocolates">Chocolates</a></li>
+                   <li><a href="#Dulces">Dulces</a></li>
+                   <li><a href="#Galletas">Galletas</a></li>
+                   <li><a href="#Gomitas">Gomitas</a></li>
+                   <li><a href="#paquetes">Paquetes</a></li>
+                   <li><a href="#chipirrines">Chipirrines</a></li>
+                   <li><a href="#Tortas">Tortas</a></li>
+              </ul>
+         </li> 
+         <li><a href="#contacto">Contacto</a></li>
+
+         <li><a href="login.html" class="login-button">Iniciar sesión</a></li>
+         <li><a href="registro.html" class="register-button">Registro</a></li>
+         
+
+         <br>
+         <br>
+     <!-- Icono de carrito de compras siempre visible -->
+    <div class="icono-carrito" onclick="toggleCarrito()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="contador-carrito">0</span> <!-- Muestra el número de productos en el carrito -->
+    </div>
+
+    <!-- Carrito de compras que se despliega al hacer clic -->
+    <div class="carrito" id="carrito">
+        <h2>Carrito de Compras</h2>
+        <div id="carrito-items">
+            <!-- Aquí se mostrarán los productos agregados -->
+        </div>
+        <div class="carrito-total">
+            <p>Total: <span id="total-carrito">0</span></p>
+        </div>
+        <button id="vaciar-carrito" class="boton-agregar">Vaciar Carrito</button>
+    </div>
+
+        
+    </div>
+      </ul>
+     </nav>
+ </header>
+ <body>
+    <section class="productos">
+        <i class="fa fa-arrow-left btn-regresar" id="btn-regresar" onclick="regresar()"></i> <!-- Icono de regresar -->
+
+        <div id="Chocolates"></div>
+        <h2><i class="fas fa-chocolate-bar"></i> Chocolates</h2>
+        <div class="contenedor-productos">
+            <div class="producto">
+                <img src="imag/bianchi.jpg" alt="Producto 1">
+                <h3>Bianchi</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="imag/producto (12).jpeg" alt="Producto 2">
+                <h3>Masmello Chocolate</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (41).jpeg" alt="Producto 2">
+                <h3>Chocolates</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/tumixpa.jpg" alt="Producto 2">
+                <h3>Tumix</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/tumixpa.jpg" alt="Producto 2">
+                <h3>Tumix</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/tumixpa.jpg" alt="Producto 2">
+                <h3>Tumix</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+           
+            </div>
+          <!-- segunda seccion -->
+           <br>
+           <h2><i class="fas fa-candy-cane"></i> Dulces</h2>
+            <div id="Dulces"></div>
+        <div class="contenedor-productos">
+            <div class="producto">
+                <img src="imag/lokiño.jpg" alt="Producto 1">
+                <h3>lokiño</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="imag/tumixpa.jpg" alt="Producto 2">
+                <h3>Tumix</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/bombum.jpg" alt="Producto 2">
+                <h3>Bombonbum</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/halls.jpg" alt="Producto 2">
+                <h3>Halls</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/anis tarro.jpeg" alt="Producto 2">
+                <h3>Tarro Anis</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/mentacigarrilo.png" alt="Producto 2">
+                <h3>Tarro Menta Cigarrilo</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/splot.jpg" alt="Producto 2">
+                <h3>Splot</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/bianchi.jpg" alt="Producto 2">
+                <h3>Bianchi</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (15).jpeg" alt="Producto 2">
+                <h3>Chupos Colombina</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (2).jpeg" alt="Producto 2">
+                <h3>Turrones</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (3).jpeg" alt="Producto 2">
+                <h3>Chicle Bomba</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (6).jpeg" alt="Producto 2">
+                <h3>Vaso Muñeco</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (9).jpeg" alt="Producto 2">
+                <h3>Chupos</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (10).jpeg" alt="Producto 2">
+                <h3>Colombina pintalenguas</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/vaso galleta.jpg" alt="Producto 2">
+                <h3>Vaso Galleta</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/mallas.jpg" alt="Producto 2">
+                <h3>Mallas</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/Masmelos.jpg" alt="Producto 2">
+                <h3>Masmelos</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/bola almendra.png" alt="Producto 2">
+                <h3>Bola Almendra</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/candymanzana.jpg" alt="Producto 2">
+                <h3>Candy Manzana</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/BUZZY-HELLO.jpg" alt="Producto 2">
+                <h3>Buzzy Hello Kitty</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/candymorazul.jpg" alt="Producto 2">
+                <h3>Candy Morazul</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (18).jpeg" alt="Producto 2">
+                <h3>Candy Sandia</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (19).jpeg" alt="Producto 2">
+                <h3>Candy Cereza</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (14).jpeg" alt="Producto 1">
+                <h3>Merengon</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (32).jpeg" alt="Producto 1">
+                <h3>Panelita de leche</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (53).jpeg" alt="Producto 1">
+                <h3>Panelita de Arequipe</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (11).jpeg" alt="Producto 1">
+                <h3>Tarro Corazon</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (48).jpeg" alt="Producto 1">
+                <h3>Marihuana</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (45).jpeg" alt="Producto 1">
+                <h3>Botellas</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (36).jpeg" alt="Producto 1">
+                <h3>Mani</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto.jpeg" alt="Producto 1">
+                <h3>Tarro Gelatina</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            
+            </div>
+             <!-- tercera seccion -->
+           <br>
+           <h2><i class="fas fa-cookie"></i> Galletas</h2>
+           <div id="Galletas"></div>
+       <div class="contenedor-productos">
+           <div class="producto">
+               <img src="imag/producto (20).jpeg" alt="Producto 1">
+               <h3>Barquillos</h3>
+               <p>20.000*30und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+
+           <div class="producto">
+               <img src="imag/producto (21).jpeg" alt="Producto 2">
+               <h3>Galleta Chocolate</h3>
+               <p>10.000*100und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+           <div class="producto">
+            <img src="imag/producto (22).jpeg" alt="Producto 2">
+            <h3>Galleta </h3>
+            <p>10.000*100und</p>
+            <button class="boton-agregar">Agregar al Carrito</button>
+        </div>
+           </div>
+            <!-- cuarta seccion -->
+            <br>
+            <h2><i class="fas fa-gummy-bear"></i> Gomitas</h2>
+            <div id="Gomitas"></div>
+        <div class="contenedor-productos">
+            <div class="producto">
+                <img src="imag/prodcuto (23).jpeg" alt="Producto 1">
+                <h3>Tarro Gomas</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+ 
+            <div class="producto">
+                <img src="imag/prodcuto (24).jpeg" alt="Producto 2">
+                <h3>Tiras Gomas</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/prodcuto (26).jpeg" alt="Producto 2">
+                <h3>Goma Corazon</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/prodcuto (27).jpeg" alt="Producto 2">
+                <h3>Goma Huevo</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/prodcuto (29).jpeg" alt="Producto 2">
+                <h3>Goma Chupo</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+             <div class="producto">
+                <img src="imag/producto (52).jpeg" alt="Producto 2">
+                <h3>Goma Minion</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (55).jpeg" alt="Producto 2">
+                <h3>Goma Pitufo</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (56).jpeg" alt="Producto 2">
+                <h3>Goma Animal</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/prodcuto (29).jpeg" alt="Producto 2">
+                <h3>Goma Chupo</h3>
+                <p>10.000*100und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            
+            </div>
+             <!-- quinta seccion -->
+           <br>
+           <h2><i class="fas fa-chips"></i> Paquetes</h2>
+           <div id="paquetes"></div>
+       <div class="contenedor-productos">
+           <div class="producto">
+               <img src="imag/producto (1).jpeg" alt="Producto 1">
+               <h3>Detodo</h3>
+               <p>20.000*30und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+
+           <div class="producto">
+               <img src="imag/producto (4).jpeg" alt="Producto 2">
+               <h3>Trocipollos</h3>
+               <p>10.000*100und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+           <div class="producto">
+               <img src="imag/todorico-bbq.jfif" alt="Producto 2">
+               <h3>Todorico BBQ</h3>
+               <p>10.000*100und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+           <div class="producto">
+               <img src="imag/todornatural.webp" alt="Producto 2">
+               <h3>Todorico Natural</h3>
+               <p>10.000*100und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+           <div class="producto">
+               <img src="imag/DeTodito-BBQ.jpg" alt="Producto 2">
+               <h3>DeTodito BBQ</h3>
+               <p>10.000*100und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+           <div class="producto">
+               <img src="imag/prodcuto (25).jpeg" alt="Producto 2">
+               <h3>Chito</h3>
+               <p>10.000*100und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+           <div class="producto">
+               <img src="imag/prodcuto (28).jpeg" alt="Producto 2">
+               <h3>Maduritos</h3>
+               <p>10.000*100und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+           <div class="producto">
+            <img src="imag/producto (34).jpeg" alt="Producto 2">
+            <h3>Tocinetas</h3>
+            <p>10.000*100und</p>
+            <button class="boton-agregar">Agregar al Carrito</button>
+        </div>
+      
+        
+           </div>
+            <!-- sexta seccion -->
+            <br>
+            <h2><i class="fas fa-toy"></i> Chipirrines</h2>
+            <div id="chipirrines"></div>
+        <div class="contenedor-productos">
+            <div class="producto">
+                <img src="imag/producto (16).jpeg" alt="Producto 1">
+                <h3>Carros</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (49).jpeg" alt="Producto 1">
+                <h3>Celulares</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (44).jpeg" alt="Producto 1">
+                <h3>Manillas</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (35).jpeg" alt="Producto 1">
+                <h3>helicoptero</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (46).jpeg" alt="Producto 1">
+                <h3>Bombas</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+            <div class="producto">
+                <img src="imag/producto (35).jpeg" alt="Producto 1">
+                <h3>helicoptero</h3>
+                <p>20.000*30und</p>
+                <button class="boton-agregar">Agregar al Carrito</button>
+            </div>
+ 
+           
+            </div>
+             <!-- septima seccion -->
+           <br>
+           <h2>Tortas</h2>
+           <div id="Tortas"></div>
+       <div class="contenedor-productos">
+           <div class="producto">
+               <img src="imag/mantecada.jpg" alt="Producto 1">
+               <h3>Mantecada</h3>
+               <p>16.000*15 und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+
+           <div class="producto">
+               <img src="imag/tortabronie.jpg" alt="Producto 2">
+               <h3>Torta de Brownie</h3>
+               <p>13.000*16 und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+           <div class="producto">
+               <img src="imag/TortaDecorada.jpg" alt="Producto 2">
+               <h3>Torta Decorada</h3>
+               <p>15.000*16 und</p>
+               <button class="boton-agregar">Agregar al Carrito</button>
+           </div>
+           
+           </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+<footer>
+    <section id="contacto">
+        <h2 style="text-align: center;">Contacto</h2>
+        <p><strong>William Borbón</strong></p>
+        <p>Teléfono: <a href="tel:+573005636631">3005636631</a></p>
+    </section>
+    <div class="social-icons">
+    <a href="https://wa.me/+573005636631" target="_blank">
+        <img src="whatsapp.png" alt="WhatsApp">
+    </a>
+    <a href="https://www.instagram.com/tu_usuario_de_instagram" target="_blank">
+        <img src="instagram.png" alt="Instagram">
+    </a>
+</div>
+</footer>
+</html>

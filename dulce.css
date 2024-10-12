@@ -1,0 +1,344 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to right, rgb(65, 217, 255), rgb(64, 81, 241));
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinea el logo al inicio (izquierda) */
+  padding: 10px;
+}
+
+.logo img {
+  max-height: 120px;
+  max-width: 120px; /* Mantener igual ancho y alto para que sea redondo */
+  padding: 5px;
+  border-radius: 50%; /* Hace que la imagen sea redonda */
+  border: 3px solid #2a2a2a; /* Un borde alrededor del logo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Añade animación para transformaciones y sombras */
+}
+
+.logo img:hover {
+  transform: scale(1.1); /* Hace que el logo crezca al pasar el mouse sobre él */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Añade una sombra al pasar el mouse */
+}
+
+
+
+
+.navegacion {
+  background-color: #2c3e50;
+  padding: 15px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu li {
+  position: relative;
+  margin: 0 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+.menu a:hover {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #34495e;
+  padding: 10px 0;
+  border-radius: 5px;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  list-style: none; /* Elimina los puntos de la lista */
+}
+
+.menu li:hover .submenu {
+  display: block;
+}
+
+.submenu li {
+  margin: 5px 0; /* Añade espacio entre cada elemento del submenú */
+}
+
+.submenu a {
+  display: block; /* Ocupa todo el ancho */
+  padding: 10px 20px;
+  color: white; 
+  text-decoration: none; 
+  transition: background 0.3s;
+  
+}
+
+.submenu a:hover {
+  background-color: rgb(64, 81, 241); /* Cambia el color de fondo al pasar el mouse */
+}
+
+
+
+.login-button, .register-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  transition: background 0.3s;
+}
+
+.login-button:hover, .register-button:hover {
+  background-color: #3a2bc0;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  position: relative; /* Para que el icono de regresar esté posicionado relativo a este contenedor */
+}
+
+#buscar {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-icon {
+  margin-left: 10px;
+  cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+  font-size: 20px; /* Ajusta el tamaño del icono */
+  color: #333; /* Color inicial del icono */
+  display: flex; /* Cambia el display a flex para que no desplace el campo */
+  align-items: center; /* Alinea verticalmente el icono */
+  transition: color 0.3s; /* Añade una transición suave al cambio de color */
+}
+
+.search-icon:hover {
+  color: #007bff; /* Cambia el color al pasar el mouse */
+}
+
+.productos {
+  margin-top: 20px; /* Espaciado entre la búsqueda y los productos */
+  position: relative; /* Para posicionar el icono de regresar */
+}
+
+.btn-regresar {
+  display: none; /* Inicialmente oculto */
+  font-size: 30px; /* Tamaño del icono de regresar */
+  color: #007bff; /* Color inicial */
+  cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+  margin-right: 10px; /* Espaciado a la derecha */
+  transition: color 0.3s; /* Transición de color */
+  position: absolute; /* Posiciona el icono */
+  left: 20px; /* Espaciado desde el borde izquierdo */
+  top: 0; /* Alineación en la parte superior */
+}
+
+.btn-regresar:hover {
+  color: #0056b3; /* Cambia el color al pasar el mouse */
+}
+
+.producto {
+  margin: 20px; /* Espaciado entre productos */
+}
+
+.productos {
+  text-align: center; /* Centra el texto */
+  padding: 20px; /* Espaciado interno */
+  background-color: #444; /* Color de fondo más claro para la caja */
+  margin: 20px auto; /* Margen automático para centrar la caja */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para un efecto de profundidad */
+  max-width: 1100px; /* Ancho máximo de la caja */
+  
+}
+
+
+.productos h2 { /* Añadir estilo al título "Nuestros Productos" */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    color: #fff; /* Color blanco para el título */
+}
+
+.contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: calc(20% - 20px); /* Ajustar ancho según cantidad de columnas */
+}
+
+/* Ajustes para las imágenes (sin cambios) */
+.producto img {
+    /* Elimine object-fit: cover */
+    width: 100%;
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    margin-bottom: 10px;
+}
+
+/* Ajustes adicionales (sin cambios) */
+.producto {
+    /* Aumente la altura del producto si las imágenes son altas */
+    height: fit-content; /* Ajusta la altura al contenido */
+}
+
+.contenedor-productos {
+    /* Ajuste el ancho del contenedor si es necesario */
+    width: 80%; /* Ejemplo: 80% del ancho de la pantalla */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.boton-agregar {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#contacto {
+    text-align: center;
+    margin-top: 50px;
+}
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Contenedor para los iconos */
+.social-icons {
+    text-align: center; /* Centrar los iconos horizontalmente */
+    margin: 20px auto; /* Agregar margen superior e inferior, y centrar horizontalmente */
+  }
+  
+  /* Estilos para los enlaces */
+  .social-icons a {
+    display: inline-block; /* Mostrar los enlaces en línea */
+    margin: 0 10px; /* Agregar espacio entre los enlaces */
+    text-decoration: none; /* Quitar el subrayado predeterminado */
+    color: inherit; /* Heredar el color del texto del contenedor */
+    transition: transform 0.3s ease; /* Agregar una transición suave */
+  }
+  
+  /* Estilos para las imágenes */
+  .social-icons img {
+    width: 30px; /* Definir el ancho de las imágenes */
+    height: 30px; /* Definir el alto de las imágenes */
+  }
+  
+  /* Efecto hover para los enlaces */
+  .social-icons a:hover {
+    transform: scale(1.1); /* Aumentar el tamaño ligeramente al pasar el mouse */
+  }
+  /* Estilos del icono del carrito */
+  .icono-carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+}
+
+.icono-carrito span {
+    background-color: white;
+    color: #007bff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+/* Estilos del carrito de compras */
+.carrito {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 350px; /* Ancho incrementado */
+  max-height: 400px; /* Altura máxima ajustada */
+  z-index: 1000;
+  display: none;
+  overflow-y: auto; /* Barra de desplazamiento vertical */
+}
+
+.carrito.visible {
+  display: block;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.carrito-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.carrito-total {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* Media query para pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+    .producto {
+        width: calc(50% - 20px); /* 2 productos por fila */
+    }
+}
+
+/* Media query para pantallas aún más pequeñas (hasta 480px) */
+@media (max-width: 480px) {
+    .producto {
+        width: 100%; /* 1 producto por fila */
+    }
+}
